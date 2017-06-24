@@ -5,8 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Optical_Floater_Remover"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" 
+        Height="350" 
+        Width="525"
+        AllowsTransparency="True" 
+        WindowStyle="None"
+        Background="Transparent"
+        WindowState="Maximized"
+        Topmost="True">
     <Grid>
-        
+        <Image Source="img/Turbulence_PNG.png"></Image>
     </Grid>
 </Window>
