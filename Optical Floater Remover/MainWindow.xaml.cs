@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Optical_Floater_Remover.controller;
 
 namespace Optical_Floater_Remover
 {
@@ -21,9 +22,11 @@ namespace Optical_Floater_Remover
     /// </summary>
     public partial class MainWindow : Window
     {
+        readonly BaseController _floaterImagerController = new BaseController();
         public MainWindow()
         {
             InitializeComponent();
+            LoadImageToGrid();
         }
 
         protected override void OnSourceInitialized(EventArgs e)
@@ -34,6 +37,22 @@ namespace Optical_Floater_Remover
             IntPtr hwnd = new WindowInteropHelper(this).Handle;
 
             SystemTransparent.makeTransparent(hwnd);
+        }
+
+        public void LoadImageToGrid()
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                for (int j = 0; j < 2; j++)
+                {
+                    var floaterImage = _floaterImagerController.LoadAnimationImageWithOpacity();
+                    //floaterImagerController.CombineRotationWithSkewAnimation(floaterImage);
+                    _floaterImagerController.RotationAnimation(floaterImage);
+                    Grid.SetColumn(floaterImage, i);
+                    Grid.SetRow(floaterImage, j);
+                    mainGrid.Children.Add(floaterImage);
+                }
+            }
         }
     }
 }
