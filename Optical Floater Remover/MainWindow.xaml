@@ -12,14 +12,13 @@
         WindowStyle="None"
         Background="Transparent"
         WindowState="Maximized"
+        ShowInTaskbar="False"
         Topmost="True">
     <Grid Name="mainGrid">
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
     </Grid>

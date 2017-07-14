@@ -8,13 +8,14 @@ using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
+using WpfAnimatedGif;
 
 namespace Optical_Floater_Remover.controller
 {
     public class BaseController
     {
-        private string ImageName = "Turbulence_PNG.png";
-        private double ImageOpacity = Convert.ToDouble(0.21);
+        private string ImageName = "Turbulence-GIF.gif";
+        private double ImageOpacity = Convert.ToDouble(0.5);
 
         public string GenerateImageSourceUri()
         {
@@ -33,7 +34,7 @@ namespace Optical_Floater_Remover.controller
             };
             RotateTransform rt = new RotateTransform();
             imageForAnimation.RenderTransform = rt;
-            //imageForAnimation.RenderTransformOrigin = new Point(0.05, 0.05);
+            imageForAnimation.RenderTransformOrigin = new Point(0.05, 0.05);
             rt.BeginAnimation(RotateTransform.AngleProperty, da);
         }
         public Image LoadAnimationImageWithOpacity()
@@ -45,7 +46,7 @@ namespace Optical_Floater_Remover.controller
             image.BeginInit();
             image.UriSource = new Uri(GenerateImageSourceUri());
             image.EndInit();
-            //ImageBehavior.SetAnimatedSource(imageToReturn, image);
+            ImageBehavior.SetAnimatedSource(imageToReturn, image);
             imageToReturn.Source = image;
             return imageToReturn;
         }

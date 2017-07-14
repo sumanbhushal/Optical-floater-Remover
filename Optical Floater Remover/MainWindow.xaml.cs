@@ -22,11 +22,19 @@ namespace Optical_Floater_Remover
     /// </summary>
     public partial class MainWindow : Window
     {
+        System.Windows.Forms.NotifyIcon notifyIcon = new System.Windows.Forms.NotifyIcon();
         readonly BaseController _floaterImagerController = new BaseController();
         public MainWindow()
         {
             InitializeComponent();
             LoadImageToGrid();
+            notifyIcon.Icon = new System.Drawing.Icon("eyeland_logo.ico");
+            notifyIcon.Visible = true;
+
+            System.Windows.Forms.ContextMenu notifyContextMenu = new System.Windows.Forms.ContextMenu();
+            notifyContextMenu.MenuItems.Add("Settings", new EventHandler(OpenSettings));
+            notifyContextMenu.MenuItems.Add("Exit", new EventHandler(Exit));
+            notifyIcon.ContextMenu = notifyContextMenu;
         }
 
         protected override void OnSourceInitialized(EventArgs e)
@@ -41,18 +49,34 @@ namespace Optical_Floater_Remover
 
         public void LoadImageToGrid()
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 1; i++)
             {
-                for (int j = 0; j < 2; j++)
+                for (int j = 0; j < 1; j++)
                 {
                     var floaterImage = _floaterImagerController.LoadAnimationImageWithOpacity();
                     //floaterImagerController.CombineRotationWithSkewAnimation(floaterImage);
-                    _floaterImagerController.RotationAnimation(floaterImage);
+                    //_floaterImagerController.RotationAnimation(floaterImage);
                     Grid.SetColumn(floaterImage, i);
                     Grid.SetRow(floaterImage, j);
                     mainGrid.Children.Add(floaterImage);
                 }
             }
+        }
+
+        public void DisableNotificationIcon()
+        {
+            notifyIcon.Visible = false;
+        }
+
+        private void Exit(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void OpenSettings(object sender, EventArgs e)
+        {
+            Setting openSetting = new Setting();
+            openSetting.Show();
         }
     }
 }
