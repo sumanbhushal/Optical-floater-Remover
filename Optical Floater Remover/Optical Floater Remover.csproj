@@ -66,6 +66,7 @@
     </ApplicationDefinition>
     <Compile Include="controller\BaseController.cs" />
     <Compile Include="controller\SystemTransparent.cs" />
+    <Compile Include="model\FloaterImage.cs" />
     <Compile Include="Setting.xaml.cs">
       <DependentUpon>Setting.xaml</DependentUpon>
     </Compile>
