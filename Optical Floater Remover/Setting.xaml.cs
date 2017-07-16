@@ -38,7 +38,6 @@ namespace Optical_Floater_Remover
             fImages.Add(new FloaterImage() { ImageName = "Turbulence-GIF.gif", ImageSourceLocation = "pack://application:,,,/img/Turbulence-GIF-small.gif" });
             fImages.Add(new FloaterImage() { ImageName = "Turbulence-GIF.gif", ImageSourceLocation = "pack://application:,,,/img/Turbulence-GIF-small.gif" });
             fImages.Add(new FloaterImage() { ImageName = "Turbulence-GIF.gif", ImageSourceLocation = "pack://application:,,,/img/Turbulence-GIF-small.gif" });
-            //fImages.Add(new FloaterImage() { ImageName = "black_dots.png", ImageSourceLocation = "pack://application:,,,/Include/black_dots.png" });
             LboxItem.ItemsSource = fImages;
         }
         private void LboxItemSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -102,11 +101,9 @@ namespace Optical_Floater_Remover
             if (slider != null)
             {
                 double OpacityValue = slider.Value;
-                string new_opacity_value = OpacityValue.ToString("0.00");
                 setNewOpacityValue = OpacityValue;
                 if (setImageName == null)
                 {
-                    //setImageName = "blackdots.gif";
                     setImageName = Settings.Default["ImageName"].ToString();
                     slider.Value = Convert.ToDouble(Settings.Default["Opacity"].ToString());
                     ClearGirdDataWithOpacity(setImageName, setNewOpacityValue);
@@ -124,8 +121,6 @@ namespace Optical_Floater_Remover
             Settings.Default["Opacity"] = setNewOpacityValue;
             Settings.Default.Save();
 
-            //GifAnimation ani = new GifAnimation();
-            //ani.Show();
             bool isWindowOpen = false;
             foreach (Window w in Application.Current.Windows)
             {
