@@ -27,7 +27,7 @@ namespace Optical_Floater_Remover
         public MainWindow()
         {
             InitializeComponent();
-            LoadImageToGrid();
+            ClearGirdData();
             notifyIcon.Icon = new System.Drawing.Icon("eyeland_logo.ico");
             notifyIcon.Visible = true;
 
@@ -47,13 +47,33 @@ namespace Optical_Floater_Remover
             SystemTransparent.makeTransparent(hwnd);
         }
 
-        public void LoadImageToGrid()
+        private void ClearGirdData()
+        {
+            //MessageBox.Show(imgName + opacityValue); used
+            for (int i = 0; i < 1; i++)
+            {
+                for (int j = 0; j < 1; j++)
+                {
+                    foreach (UIElement control in mainGrid.Children)
+                    {
+                        if (Grid.GetRow(control) == j && Grid.GetColumn(control) == i)
+                        {
+                            mainGrid.Children.Remove(control);
+                            break;
+                        }
+                    }
+                }
+            }
+            LoadDataInGrid();
+        }
+
+        private void LoadDataInGrid()
         {
             for (int i = 0; i < 1; i++)
             {
                 for (int j = 0; j < 1; j++)
                 {
-                    var floaterImage = _floaterImagerController.LoadAnimationImageWithOpacity();
+                    var floaterImage = _floaterImagerController.LoadAnimationImageFromMain();
                     //floaterImagerController.CombineRotationWithSkewAnimation(floaterImage);
                     //_floaterImagerController.RotationAnimation(floaterImage);
                     Grid.SetColumn(floaterImage, i);
