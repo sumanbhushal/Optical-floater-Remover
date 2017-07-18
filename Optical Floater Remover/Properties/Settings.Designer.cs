@@ -37,7 +37,7 @@ namespace Optical_Floater_Remover.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0.21")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0.5")]
         public double Opacity {
             get {
                 return ((double)(this["Opacity"]));

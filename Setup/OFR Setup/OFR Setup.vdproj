@@ -46,13 +46,13 @@
         "Entry"
         {
         "MsmKey" = "8:_8B8A2234DAED99EFB334F63CCFEF8C23"
-        "OwnerKey" = "8:_48C275EE845249F2A3D3B71BB79D77B5"
+        "OwnerKey" = "8:_23DEE1F622D69A02A506EDCB6B5EB2BA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_8B8A2234DAED99EFB334F63CCFEF8C23"
-        "OwnerKey" = "8:_23DEE1F622D69A02A506EDCB6B5EB2BA"
+        "OwnerKey" = "8:_48C275EE845249F2A3D3B71BB79D77B5"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -65,12 +65,6 @@
         {
         "MsmKey" = "8:_8E58CE785619A344E7BCB69259EE076D"
         "OwnerKey" = "8:_48C275EE845249F2A3D3B71BB79D77B5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_23DEE1F622D69A02A506EDCB6B5EB2BA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -89,6 +83,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_7B8341DC473BFFFC0BC2A6CAB7790AA0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_23DEE1F622D69A02A506EDCB6B5EB2BA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -121,6 +121,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -137,6 +145,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -379,6 +403,17 @@
             "Property" = "8:ProgramMenuFolder"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_E51ACB71C5264BFC831DFE2506CC7D92"
+                    {
+                    "Name" = "8:Optical Floater Remover"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_321DB6EFBF7D46C6A62396CA7EFAE706"
+                        "Folders"
+                        {
+                        }
+                    }
                 }
             }
         }
@@ -396,9 +431,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:OFR Setup"
+        "ProductName" = "8:Optical Floater Remover"
         "ProductCode" = "8:{E386D7D3-F49C-45BA-9107-C370462D7004}"
-        "PackageCode" = "8:{A6FE273B-E07C-469B-A5C9-54E002484B5C}"
+        "PackageCode" = "8:{56014C72-A453-45AA-AD97-1C7C27196D8D}"
         "UpgradeCode" = "8:{2DEFB32D-4496-43AE-8A8A-0552E9CFE85E}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -411,7 +446,7 @@
         "ARPHELPLINK" = "8:"
         "Title" = "8:OFR Setup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Suman"
+        "ARPCONTACT" = "8:Suman Bhushal"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -518,6 +553,34 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_244A2E5C997746C2B95BBCA6B03A020E"
+            {
+            "Name" = "8:Optical Floater Remover"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_48C275EE845249F2A3D3B71BB79D77B5"
+            "Folder" = "8:_3DA0A18C49D34CC99E63D626FA90315B"
+            "WorkingFolder" = "8:_401E794D89C148F28CC9C367BD63CCEB"
+            "Icon" = "8:_1ACA2C924DF0405B9FCF9B817320F2CB"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_E0E913C9A9D948D8A48B56E3335ACAEA"
+            {
+            "Name" = "8:Optical Floater Remover"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_48C275EE845249F2A3D3B71BB79D77B5"
+            "Folder" = "8:_E51ACB71C5264BFC831DFE2506CC7D92"
+            "WorkingFolder" = "8:_401E794D89C148F28CC9C367BD63CCEB"
+            "Icon" = "8:_1ACA2C924DF0405B9FCF9B817320F2CB"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
